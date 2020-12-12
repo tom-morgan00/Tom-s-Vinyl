@@ -1,25 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { makeStyles } from '@material-ui/core';
+import { useLocation } from 'react-router-dom';
 
-export default class Default extends Component {
-  render() {
-    console.log(this.props);
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-10 mx-auto text-center text-title text-uppercase pt-5">
-            <h1 className="display-3">404</h1>
-            <h1>error</h1>
-            <h2>page not found</h2>
-            <h3>
-              the requeseted URL
-              <span className="text-danger">
-                {`"${this.props.location.pathname}"`}
-              </span>
-              was not found
-            </h3>
-          </div>
-        </div>
+const useStyles = makeStyles({
+  pageNotFound: {
+    position: 'absolute',
+    margin: 0,
+    top: '30%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    fontSize: '2rem',
+  },
+});
+
+export default function Default() {
+  const location = useLocation();
+  const classes = useStyles();
+  return (
+    <div className={classes.pageNotFound}>
+      <div className="text-title">
+        <h1>404 error</h1>
+        <h2>page not found</h2>
+        <h3 style={{ fontFamily: 'Open Sans' }}>
+          the requeseted URL
+          <span>{`  "${location.pathname}"  `}</span>
+          was not found
+        </h3>
       </div>
-    );
-  }
+    </div>
+  );
 }

@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import 'dotenv/config.js';
 import productRouter from './routes/productRoutes.js';
-import Product from './models/Product.js';
-import { data } from './data.js';
+import userRouter from './routes/userRoutes.js';
+import orderRouter from './routes/orderRoutes.js';
 
 //MONGO SETUP
 (async () => {
@@ -33,6 +33,8 @@ app.use(express.json());
 
 //ROUTES
 app.use('/api/v1/products', productRouter);
+app.use('/api/v1/users', userRouter);
+app.use('/api/v1/order', orderRouter);
 
 app.get('/', (req, res) => {
   res.send("Tom's Vinyl Server");

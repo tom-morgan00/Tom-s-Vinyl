@@ -1,41 +1,102 @@
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  makeStyles,
+} from '@material-ui/core';
 import React from 'react';
-import PayPalButton from './PayPalButton';
+import { Link } from 'react-router-dom';
 
-export default function CartTotals({ value, history }) {
-  const { cartSubTotal, cartTax, cartTotal, clearCart } = value;
+const useStyles = makeStyles({
+  totalsContainer: {
+    marginTop: '3rem',
+    position: 'relative',
+    textAlign: 'right',
+  },
+  totalsCard: {
+    textAlign: 'right',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  },
+  total: {
+    fontSize: '2rem',
+  },
+  cardButtons: {
+    padding: 0,
+    margin: 0,
+  },
+  buttons: {
+    margin: 0,
+    fontSize: '1.2rem',
+    padding: '0.5rem 1rem',
+    '&:hover': {
+      color: 'var(--mainLight)',
+      backgroundColor: 'var(--mainBlue)',
+      border: '0.04rem solid rgba(0, 0, 0, 0.2)',
+    },
+  },
+  clearCart: {
+    color: 'var(--mainRed)',
+    '&:hover': {
+      backgroundColor: 'var(--mainRed)',
+    },
+  },
+});
+
+export default function CartTotals({ items, clearCart }) {
+  const classes = useStyles();
+  const calcTotal = (arr) => {
+    return arr
+      .map((item) => {
+        const total = (item.quantity * item.price).toFixed(2);
+
+        return +total;
+      })
+      .reduce((acc, cur) => {
+        const total = (acc + cur).toFixed(2);
+
+        return +total;
+      }, 0);
+  };
+
+  const calcTotalItems = (arr) => {
+    return arr
+      .map((item) => item.quantity)
+      .reduce((acc, cur) => {
+        const total = acc + cur;
+        return +total;
+      }, 0);
+  };
+
   return (
-    <>
-      <div className="container">
-        <div className="row">
-          <div className="col-10 mt-2 ml-sm-5 ml-md-auto col-sm-8 text-capitalize text-right">
-            <button
-              className="btn btn-outline-danger text-uppercase mb-3 px-5"
-              type="button"
-              onClick={() => clearCart()}
-            >
-              clear cart
-            </button>
-
-            <h5>
-              <span className="text-title">subtotal:</span>
-              <strong>£ {cartSubTotal.toFixed(2)}</strong>
-            </h5>
-            <h5>
-              <span className="text-title">tax:</span>
-              <strong>£ {cartTax.toFixed(2)}</strong>
-            </h5>
-            <h5>
-              <span className="text-title">total:</span>
-              <strong>£ {cartTotal.toFixed(2)}</strong>
-            </h5>
-            <PayPalButton
-              total={cartTotal}
-              clearCart={clearCart}
-              history={history}
-            />
-          </div>
-        </div>
-      </div>
-    </>
+    <section className={classes.totalsContainer}>
+      <Card className={classes.totalsCard}>
+        <CardContent>
+          <h2 className={classes.total}>{`Total: £${calcTotal(items)}`}</h2>
+          <h3
+            style={{ fontSize: '1.8rem' }}
+            className={classes.total}
+          >{`Items: ${calcTotalItems(items)}`}</h3>
+        </CardContent>
+        <CardActions>
+          <Link to="/shipping">
+            <Button className={classes.buttons} size="medium" color="primary">
+              Checkout
+            </Button>
+          </Link>
+          <br />
+          <Button
+            className={`${classes.buttons} ${classes.clearCart}`}
+            size="medium"
+            color="primary"
+            onClick={() => clearCart()}
+          >
+            Clear Cart
+          </Button>
+        </CardActions>
+      </Card>
+    </section>
   );
 }

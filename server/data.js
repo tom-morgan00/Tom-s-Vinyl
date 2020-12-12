@@ -1,4 +1,12 @@
-export const data = [
+export const userData = [
+  {
+    name: 'Tom',
+    email: 'tom@gmail.com',
+    password: 'tom123',
+  },
+];
+
+export const productsData = [
   {
     title: "Whatever People Say I Am, That's What I'm Not",
     image:

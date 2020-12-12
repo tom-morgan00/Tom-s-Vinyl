@@ -20,7 +20,7 @@ export const getProducts = () => async (dispatch) => {
         products: [],
       },
     });
-    const { data } = await api.get('/');
+    const { data } = await api.get('/products');
     dispatch({
       type: GET_PRODUCTS,
       payload: {
@@ -52,7 +52,7 @@ export const getProductByID = (id) => async (dispatch) => {
         product: {},
       },
     });
-    const { data } = await api.get(`/${id}`);
+    const { data } = await api.get(`/products/${id}`);
 
     dispatch({
       type: GET_PRODUCT,

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { productsData } from '../data.js';
 
 const productSchema = mongoose.Schema({
   title: String,
@@ -12,24 +13,21 @@ const productSchema = mongoose.Schema({
   tracklist: [String],
 });
 
-const product = new mongoose.model('Product', productSchema);
+const Product = new mongoose.model('Product', productSchema);
 
-export default product;
+export default Product;
 
-//SEEDING DATABASE
+// // SEEDING DATABASE
 // (async () => {
 //   try {
 //     await Product.deleteMany({});
-//     const products = data.map((prod) => {
+//     await productsData.map((prod) => {
 //       const product = new Product({
 //         title: prod.title,
 //         artist: prod.artist,
 //         image: prod.image,
 //         price: prod.price,
 //         year: prod.year,
-//         inCart: prod.inCart,
-//         count: prod.count,
-//         total: prod.total,
 //         tracklist: prod.tracklist,
 //       });
 //       product.save();

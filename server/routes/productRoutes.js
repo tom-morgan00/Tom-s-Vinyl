@@ -17,11 +17,10 @@ productRouter.get('/', async (req, res) => {
         },
       });
     } else {
-      res.status(404).send('No Products Found!');
-      console.log('No Products Found!');
+      res.send('No Products Found!');
     }
   } catch (err) {
-    res.status(404).send('Product Not Found!');
+    res.send('Product Not Found!');
     console.log(err);
   }
 });
@@ -39,10 +38,10 @@ productRouter.get('/:id', async (req, res) => {
         },
       });
     } else {
-      res.status(404).send('Product Not Found!');
+      res.send('Product Not Found!');
     }
   } catch (err) {
-    res.status(404).send('Product Not Found!');
+    res.send('Product Not Found!');
     console.log(err);
   }
 });

@@ -1,0 +1,57 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainBlack: #000;
+  --mainWhite: #fff;
+  --mainDark: #121212;
+  --mainLight: #ddd;
+  --mainBlue: #009ffd;
+  --mainYellow: #ffa400;
+  --mainRed: #ff0000;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--mainLight);
+  color: var(--mainDark);
+  margin: 0;
+  padding: 0;
+}
+
+.text-title {
+  font-family: 'Lobster Two', cursive !important;
+  letter-spacing: 0.3rem;
+  text-transform: capitalize;
+}
+
+.text-blue {
+  color: var(--mainBlue);
+}
+
+.text-bright {
+  color: var(--mainWhite);
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
