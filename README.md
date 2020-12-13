@@ -1,4 +1,4 @@
-# Tom-s-Vinyl
+# Tom's Vinyl
 Vinyl Ecommerce Website
 
 - Demo: https://toms-vinyl.netlify.app/
