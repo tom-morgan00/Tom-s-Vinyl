@@ -31,19 +31,28 @@ This project is an full-stack, e-commerce website that allows users buy their fa
 
 ## PC
 
-### Landing Page
-![](https://github.com/tom-morgan00/TOMDb/blob/master/1.png?raw=true)
-
-### Search and Results
-![](https://github.com/tom-morgan00/TOMDb/blob/master/4.png?raw=true)
+### Products Page
+![](https://github.com/tom-morgan00/Tom-s-Vinyl/blob/master/1.png?raw=true)
 
 ### Details Page
-![](https://github.com/tom-morgan00/TOMDb/blob/master/5.png?raw=true)
+![](https://github.com/tom-morgan00/Tom-s-Vinyl/blob/master/2.png?raw=true)
+
+### Cart Page
+![](https://github.com/tom-morgan00/Tom-s-Vinyl/blob/master/3.png?raw=true)
+
+### Address Form
+![](https://github.com/tom-morgan00/Tom-s-Vinyl/blob/master/4.png?raw=true)
+
+### Checkout Page
+![](https://github.com/tom-morgan00/Tom-s-Vinyl/blob/master/5.png?raw=true)
 
 ## Mobile
 
-### Search Results
-![](https://github.com/tom-morgan00/TOMDb/blob/master/2.png?raw=true)
+### Products Page
+![](https://github.com/tom-morgan00/Tom-s-Vinyl/blob/master/6.png?raw=true)
 
 ### Details Page
-![](https://github.com/tom-morgan00/TOMDb/blob/master/3.png?raw=true)
+![](https://github.com/tom-morgan00/Tom-s-Vinyl/blob/master/8.png?raw=true)
+
+### Cart Page
+![](https://github.com/tom-morgan00/Tom-s-Vinyl/blob/master/7.png?raw=true)
